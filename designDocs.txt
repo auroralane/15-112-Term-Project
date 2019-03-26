@@ -1,0 +1,43 @@
+To create Zombieland, object oriented programming and animation were
+applied using Tkinter.
+
+SUMMARY
+
+Player must move through course and avoid dying from zombies (health decreased to 0). Must find exit to win and "escape" Zombieland. Can shoot zombies. Zombies wander around aimlessly and can chase you when they're hungry (red, within certain distance/"smell" you).
+
+MAP
+
+A map of the course had to be drawn, so an "Obstacle" class was created and a list was used to store all the park obstacles. 
+
+To zoom in on only a section of the course, each obstacle was scaled up by a factor and then were all shifted by a set amount. A sub section of the canvas was specified so that the user would be able to move around on the screen, but then the course would shift once the user hit the edge of where they were allowed to move. This was a design choice that intended to maintain a sense of movement and exploration for the player.
+
+
+CHARACTERS
+
+A "Person" class was created to create the player and zombies. They have similar characteristics with a few differences.
+
+Player: 
+
+Move with arrow keys and "w-a-s-d" keys, and shoot by using cursor to aim and clicking to shoot. This choice was made so that the user can use both hands to control the player (you can run and shoot at the same time, in case the game gets fast paced as zombies are chasing you).
+
+You must make your way thru the course without dying (health level reaches 0) and find/navigate to the exit and then you win the game. 
+
+Zombies: 
+
+Generate randomly on course, on timer fired. Generate so that at most 3 zombies are on screen, within player bounds (so if player kills zombie or moves off screen, new zombies appear).
+
+Standard zombies are blue, and move around aimlessly (random, slow movements). Once player gets within certain distance, zombie can "smell" you and will turn red. Zombie will try to find you and chase you, by moving faster and moving towards you, although sometimes if an obstacle is in front of them, they can't see you and will just stay there and be hungry.
+
+Once zombie reaches you, your health will decrease. If your health gets to 0, you die and game ends. Zombies also have health (cause they are people/Person objects), but you can't tell what their health is (to maintain the realistic nature of the game). By shooting them several times, they will die and disappear. 
+
+If you stay in one place and don't kill the zombies while they're red, they will come towards you and "feed" on you until you die.
+
+BULLETS
+
+Bullets can't go through obstacles. 
+
+
+
+
+
+
